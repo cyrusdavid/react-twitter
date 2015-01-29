@@ -1,0 +1,81 @@
+body {
+  font-family: 'Proxima Nova', 'Open Sans', Georgia, Arial, sans-serif;
+  font-size: 12px;
+}
+
+a {
+  color: #0074D9;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.alert {
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.title {
+  width: 512px;
+  margin: 20px auto;
+}
+
+.tweet-stream {
+  width: 512px;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+@img-width: 48px;
+@img-height: 48px;
+
+.tweet {
+  position: relative;
+  min-height: @img-height;
+  &:not(:nth-child(2)) {
+    &:before {
+      content: '';
+      display: block;
+      width: 30%;
+      margin: 20px auto 0;
+      height: 1px;
+      background: #999;
+      clear: both;
+    }
+    .tweet-avatar {
+      top: 20px;
+    }
+    .tweet-body {
+      margin-top: 20px;
+    }
+  }
+  .tweet-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: @img-width;
+    height: @img-height;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .tweet-body {
+    margin: 0 0 0 @img-width + 10px;
+  }
+  .tweet-text {
+    margin: 5px 0 0;
+  }
+  .tweet-user {
+    font-weight: bold;
+    color: #aaa;
+    text-decoration: none;
+  }
+}
